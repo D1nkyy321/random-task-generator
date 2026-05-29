@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TimeMaster Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">TimeMaster Pro</p>
+        <h1>Секундомер и таймер в одном приложении</h1>
+      </div>
+      <button class="theme-btn" id="themeBtn" title="Сменить тему">☾</button>
+    </section>
+
+    <section class="card">
+      <div class="tabs">
+        <button class="tab active" data-mode="stopwatch">Секундомер</button>
+        <button class="tab" data-mode="timer">Таймер</button>
+      </div>
+
+      <div class="display-wrap">
+        <div class="progress-ring" id="progressRing">
+          <div class="time" id="timeDisplay">00:00:00</div>
+          <div class="status" id="statusText">Готов к старту</div>
+        </div>
+      </div>
+
+      <div class="timer-settings hidden" id="timerSettings">
+        <label>
+          Часы
+          <input type="number" id="hoursInput" min="0" max="99" value="0" />
+        </label>
+        <label>
+          Минуты
+          <input type="number" id="minutesInput" min="0" max="59" value="5" />
+        </label>
+        <label>
+          Секунды
+          <input type="number" id="secondsInput" min="0" max="59" value="0" />
+        </label>
+      </div>
+
+      <div class="preset-row hidden" id="presetRow">
+        <button class="preset" data-minutes="1">1 мин</button>
+        <button class="preset" data-minutes="5">5 мин</button>
+        <button class="preset" data-minutes="10">10 мин</button>
+        <button class="preset" data-minutes="25">25 мин</button>
+      </div>
+
+      <div class="controls">
+        <button class="btn primary" id="startBtn">Старт</button>
+        <button class="btn" id="pauseBtn">Пауза</button>
+        <button class="btn danger" id="resetBtn">Сброс</button>
+      </div>
+
+      <div class="lap-actions" id="lapActions">
+        <button class="ghost-btn" id="lapBtn">Добавить круг</button>
+        <button class="ghost-btn" id="clearLapsBtn">Очистить историю</button>
+      </div>
+
+      <ol class="laps" id="lapsList"></ol>
+    </section>
+
+    <footer>
+      Сделано для проекта на GitHub · HTML + CSS + JavaScript
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
